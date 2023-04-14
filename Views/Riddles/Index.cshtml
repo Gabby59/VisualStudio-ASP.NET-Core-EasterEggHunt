@@ -1,0 +1,40 @@
+﻿@model IEnumerable<EasterEggHunt.Models.Riddle>
+<!-- list of riddles-->
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Rhyming clues, riddles, anagrams, movie references and more </h1>
+<p>
+    <a asp-action="Create" style="color:purple">Create A New Riddle</a>
+</p>
+<img src="~/colorfuleggs.png" alt="colorful eggs" style="height:4px; width:100%; opacity: 0.8; background-repeat:repeat-y;
+            margin-top: 10px; margin-bottom: 10px" />
+<p>When you start planning your Easter egg hunt ideas, you’ll need to pick locations that you can easily drop a hint about in clues. So here are our top suggestions for some Easter egg hunt clues, perfect for Easter egg hunting through different areas in your house!</p>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.RiddleQuestion)
+            </th>
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.RiddleQuestion)
+            </td>
+            <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id" style="color:purple">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id" style="color:purple">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id" style="color:purple">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

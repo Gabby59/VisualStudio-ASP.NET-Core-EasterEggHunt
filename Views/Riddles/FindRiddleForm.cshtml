@@ -1,0 +1,33 @@
+﻿<!-- model EasterEggHunt.Models.Riddle - no longer needed
+//I am not creating a new riddle, just a new data entry form
+-->
+
+<h4>Have something in mind? Search through our Easter egg hunt RiddleQuestion. </h4>
+<!-- <hr/> --> 
+<img src="~/colorfuleggs.png" alt="colorful eggs" style="height:4px; width:100%; opacity: 0.8; background-repeat:repeat-y;
+            margin-top: 10px; margin-bottom: 10px" />
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="ShowSearchResults" >
+            <div class="form-group" >
+                <label for="SearchForClue" class="control-label"></label>
+                <input name="SearchForClue" class="form-control" style="margin-bottom: 15px" />
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Find Riddle" class="btn btn-primary" style="margin-bottom:5px; background-color:purple" />
+            </div> 
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index" style="color:rebeccapurple">Back to List</a>
+</div>
+
+<!--
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+// also not needed, because there is no need for data validation
+-->
